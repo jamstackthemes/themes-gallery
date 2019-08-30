@@ -1,1 +1,1 @@
-# themes-gallery
+# Jamstack Themes
