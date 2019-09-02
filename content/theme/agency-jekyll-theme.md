@@ -1,5 +1,6 @@
 ---
-title: "Agency Jekyll Theme"
+title: "Agency Jekyll"
+date: 
 thumbnail: 'images/theme/thumbnail/agency-jekyll.png'
 github: https://github.com/y7kim/agency-jekyll-theme
 demo: https://y7kim.github.io/agency-jekyll-theme/
