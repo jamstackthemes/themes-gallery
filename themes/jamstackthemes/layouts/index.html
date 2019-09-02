@@ -17,9 +17,8 @@
   </div>
 
   <div class="grids">
-    {{ range $themes.ByLastmod }}
-    {{ dateFormat "15:04:05am Monday, Jan 2, 2006" .Lastmod }}
-
+    {{ range sort $themes "Lastmod" "desc" }}
+    {{ partial "theme-card.html" (dict "theme" . ) }}
     {{ end }}
   </div>
 </div>
