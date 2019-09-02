@@ -1,0 +1,31 @@
+.page {
+  .wrapper {
+    display: flex;
+    width: 100%;
+  }
+  .sidebar {
+    width: 300px;
+    position: sticky;
+    z-index: 1;
+    border-right: 1px solid $grey;
+    top: 0;
+    width: 240px;
+    overflow: hidden;
+    padding: 100px 20px 40px 20px;
+    height: calc(100vh);
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    @media (max-width: 500px) {
+      width: 120px;
+    }
+  }
+  .main {
+    flex: 1;
+    padding: 100px 40px 40px 40px;
+    @media (max-width: 500px) {
+      padding: 100px 20px 20px 20px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$primary: #f252da;
+$grey: #e9e9e9;
+$yellow: #f6d603;
+$blue: #57b8ff;
+
+$font-family-base: 'Roboto', Helvetica, sans-serif;
+$font-family-heading: 'Roboto', Helvetica, sans-serif;
+$font-family-mono: 'monospace';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import 'reset';
+@import 'theme-card';
+@import 'layout';
+@import 'header';
+@import 'filter';
+@import 'intro';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  line-height: 1.15;
+  font-family: $font_family_heading, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #2a2a2a;
+}

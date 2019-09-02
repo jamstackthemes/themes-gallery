@@ -1,0 +1,34 @@
+<div
+  class="grid {{ range .theme.Params.ssg }}{{ . | urlize }} {{end}}{{ range .theme.Params.cms }}{{ . | urlize }} {{end}}{{ range .theme.Params.deploy }}{{ . | urlize }} {{end}}">
+  <div class="theme">
+    <div class="theme-header">
+      <a href="{{ .theme.Params.github }}" target="_blank"><img src="{{ .theme.Params.thumbnail | relURL }}"
+          alt="{{ .theme.Params.title }} screenshot" /></a>
+    </div>
+    <div class="theme-body">
+      <div class="theme-heading">
+        <h2>{{ .theme.Params.title }}</h2>
+        <div class="theme-author">By {{ .theme.Params.author }}</div>
+        {{ partial "star.html" (dict "themeStars" .theme.Site.Data.stars "themeGithub" .theme.Params.github)}}
+      </div>
+      <div class="theme-tags">
+        <div class="tags">
+          {{ if .theme.Params.ssg }}
+          {{ range .theme.Params.ssg }}
+          {{ partial "icon.html" (dict "name" . "category" "ssg") }}
+          {{ end }}
+          {{ end }}
+        </div>
+        {{ if .theme.Params.cms }}
+        <div class="tags">
+          {{ if .theme.Params.cms }}
+          {{ range .theme.Params.cms }}
+          {{ partial "icon.html" (dict "name" . "category" "cms") }}
+          {{ end }}
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

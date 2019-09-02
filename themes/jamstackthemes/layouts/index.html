@@ -1,0 +1,25 @@
+{{ define "title" }}JAMStack Themes{{ end}}
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-home{{ end }}
+
+{{ define "main" }}
+<div class="sidebar">
+  {{ partial "filters.html" . }}
+</div>
+<div class="main">
+  
+  {{ $themes := (where .Site.RegularPages "Type" "theme") }}
+  {{ $themeCount := len $themes }}
+
+  <div class="intro">
+    <h1>JAMStack Themes <span class="count">({{ $themeCount }})</span></h1>
+    <h2>Find the perfect theme for your next Jamstack project.</h2>
+  </div>
+
+  <div class="grids">
+    {{ range $themes.ByLastmod }}
+    {{ partial "theme-card.html" (dict "theme" . ) }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
