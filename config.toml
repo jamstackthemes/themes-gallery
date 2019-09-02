@@ -8,11 +8,10 @@ enableGitInfo = true
 [taxonomies]
   ssg =  "ssg"
   cms = "cms"
-  tag = "tags"
 
 [params]
     google_analytics_id = ""
 
 [outputs]
-  home = ["HTML","RSS", "JSON"]
-  section = ["HTML","RSS", "JSON"]
+  home = ["HTML","RSS","JSON"]
+  section = ["HTML","RSS"]

@@ -8,6 +8,7 @@ Submit your theme to the gallery. Fork this repo and make the following changes,
 
 1. Create a new markdown file in `content/theme` and add relevant front-matter.
 
+```yaml
 ---
 title: "My Theme Name"
 thumbnail: 'images/theme/my-theme.png'
@@ -19,6 +20,7 @@ ssg:
 cms:
   - NetlifyCMS
 ---
+```
 
 2. Add screenshots of your theme
 
