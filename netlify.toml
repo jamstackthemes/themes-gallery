@@ -1,5 +1,8 @@
-[context.deploy-preview.environment]
+[build]
+  publish = "public"
+  command = "hugo"
 
-[context.production.environment]
-
-[context.branch-deploy.environment] 
+[build.environment]
+  HUGO_VERSION = "0.57.2"
+  HUGO_THEME = "repo"
+  HUGO_BASEURL = "/"
