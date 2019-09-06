@@ -32,9 +32,10 @@
 
   {{ $jquery := resources.Get "js/libs/jquery-3.3.1.min.js" }}
   {{ $isotope := resources.Get "js/libs/isotope.pkgd.min.js" }}
+  {{ $imagesLoaded := resources.Get "js/libs/imagesloaded.pkgd.min.js" }}
   {{ $scripts := resources.Get "js/scripts.js" }}
 
-  {{ $js := slice $jquery $isotope $scripts | resources.Concat "js/bundle.js" }}
+  {{ $js := slice $jquery $isotope $imagesLoaded $scripts | resources.Concat "js/bundle.js" }}
 
   {{ if .Site.IsServer }}
   <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>

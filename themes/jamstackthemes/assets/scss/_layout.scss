@@ -13,6 +13,9 @@
     overflow: hidden;
     padding: 100px 20px 40px 20px;
     height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     h3 {
       font-size: 16px;
       font-weight: 700;
@@ -26,6 +29,15 @@
     padding: 100px 40px 40px 40px;
     @media (max-width: 500px) {
       padding: 100px 20px 20px 20px;
+    }
+  }
+  .made-by {
+    color: #666;
+    a {
+      color: #666;
+      &:hover {
+        color: #000;
+      }
     }
   }
 }

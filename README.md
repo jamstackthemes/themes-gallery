@@ -33,3 +33,39 @@ Add a hires screenshot of your theme in `static/hires`.
 Add a thumbnail screenshot of your theme in `static/images/thumbnail` - The thumbnail field in the frontmatter should refer to this image.
 
 * 280px wide by 160px height
+
+## Develop Locally
+
+This site is built on [Hugo](https://gohugo.io/)
+
+Fork and clone this repo.
+
+Development Server
+
+```
+hugo serve
+```
+
+Build Site
+
+```
+hugo
+```
+
+## Utilities
+
+```
+npm install
+```
+
+Generate Github Stars
+
+```
+npm run stars
+```
+
+Generate Screenshots
+
+```
+npm run screenshots
+```

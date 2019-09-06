@@ -3,7 +3,10 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   .grid {
-    width: 302px;
+    width: 100%;
+    @media (min-width: 600px) {
+      width: 302px;
+    }
     padding: 10px;
   }
 }
@@ -86,6 +89,9 @@
   display: inline-block;
   a {
     display: inline-block;
+    &:hover {
+      opacity: 0.7;
+    }
   }
   img {
     display: inline-block;

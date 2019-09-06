@@ -1,8 +1,13 @@
 // store filter per group
 var filters = {};
-var $container = $('.grids');
-$container.isotope({
+var $container = $('.grids').isotope({
   itemSelector: '.grid',
+});
+var data = $container.data('isotope');
+var $filterCount = $('.count-number');
+
+$container.imagesLoaded().progress( function() {
+  $container.isotope('layout');
 });
 
 // do stuff when checkbox change
@@ -27,6 +32,7 @@ $('.filters').on('change', function(event) {
 
   var comboFilter = getComboFilter();
   $container.isotope({ filter: comboFilter });
+  updateFilterCount();
 });
 
 function getComboFilter() {
@@ -55,4 +61,8 @@ function getComboFilter() {
   }
   var comboFilter = combo.join(', ');
   return comboFilter;
+}
+
+function updateFilterCount() {
+  $filterCount.text( data.filteredItems.length );
 }

@@ -18,3 +18,10 @@ enableGitInfo = true
 
 [frontmatter]
   lastmod = [":git", "lastmod", ":fileModTime", ":default"]
+
+
+# Main Menu
+[[menu.main]]
+	name = "About"
+	url = "/about/"
+    weight = 1
