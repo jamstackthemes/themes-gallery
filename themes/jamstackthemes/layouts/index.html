@@ -2,6 +2,17 @@
 {{ define "header_css" }}{{ end }}
 {{ define "body_classes" }}page-home{{ end }}
 
+{{ define "meta_tags" }}
+<meta name="description" content="Find the perfect theme for your next JAMStack project." />
+<meta property="og:title" content="JAMStack Themes" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.jamstackthemes.dev" />
+<meta property="og:description" content="Find the perfect theme for your next JAMStack project." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@stackbithq" />
+<meta name="twitter:creator" content="@stackbithq" />
+{{ end }}
+
 {{ define "main" }}
 <div class="sidebar">
   {{ partial "filters.html" . }}
