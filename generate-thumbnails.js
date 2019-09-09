@@ -5,6 +5,8 @@ const im = require('imagemagick');
 
 const imageFiles = fs.readdirSync('./static/capture');
 
+console.log(`Generating thumbnails from images in ./static/capture'`)
+
 imageFiles.forEach((image) => {
   im.crop({
     srcPath: `./static/capture/${image}`,

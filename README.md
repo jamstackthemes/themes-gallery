@@ -67,17 +67,23 @@ hugo
 npm install
 ```
 
-Generate Github Stars
+### Generate Github Stars
 
 Requires a Github Token 
 
 ```
 export GITHUB_TOKEN=XXX
-npm run stars
+npm run generate-github
 ```
 
-Generate Screenshots
+### Capture Screenshots
+
+Will take screenshots of each theme, based on the demo link and store the files in `static/capture`
 
 ```
-npm run screenshots
+npm run capture-screenshots
 ```
+
+### Generate Thumbnails
+
+Will generate thumbnails for each theme. Uses Hires screenshots from `static/capture` and stores files in `static/images/theme/thumbnails`. 

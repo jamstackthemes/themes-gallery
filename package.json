@@ -2,8 +2,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "hugo",
-    "stars": "node ./stars.js",
-    "screenshots": "node ./screenshots.js"
+    "generate-github": "node ./generate-github.js",
+    "capture-screenshots": "node ./capture-screenshots.js",
+    "generate-thumbnails": "node ./generate-thumbnails.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
