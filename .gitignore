@@ -1,7 +1,6 @@
 # Hugo Theme
 resources
 public
-static/capture
 
 # OSX
 .DS_Store
