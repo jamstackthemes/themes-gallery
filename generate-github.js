@@ -37,7 +37,8 @@ loadTheme = async file => {
       url: repoResponse.data.html_url,
       stars: repoResponse.data.stargazers_count,
       forks: repoResponse.data.forks_count,
-      open_issues: repoResponse.data.open_issues_count
+      open_issues: repoResponse.data.open_issues_count,
+      last_commit: repoResponse.data.pushed_at
     }
 
   }
