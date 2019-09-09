@@ -1,16 +1,36 @@
-// store filter per group
-var filters = {};
+
+// Init Isotope
 var $container = $('.grids').isotope({
   itemSelector: '.grid',
+  getSortData: {
+    name: '.theme-title',
+    stars: '.star-count parseInt',
+    lastmod: '.theme-lastmod-date'
+  },
+  sortAscending: {
+    name: true,
+    stars: false
+  }
 });
-var data = $container.data('isotope');
-var $filterCount = $('.count-number');
 
+// Images Loaded prevents cards stacking
 $container.imagesLoaded().progress( function() {
   $container.isotope('layout');
 });
 
-// do stuff when checkbox change
+var filters = {};
+var data = $container.data('isotope');
+var $filterCount = $('.count-number');
+
+// Sorting
+$('.sort').on( 'click', 'button', function() {
+  var sortValue = $(this).attr('data-sort-value');
+  console.log(sortValue)
+  $container.isotope({ sortBy: sortValue });
+});
+
+
+// Filters
 $('.filters').on('change', function(event) {
   var checkbox = event.target;
   var $checkbox = $(checkbox);
@@ -66,3 +86,5 @@ function getComboFilter() {
 function updateFilterCount() {
   $filterCount.text( data.filteredItems.length );
 }
+
+

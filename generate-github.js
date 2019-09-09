@@ -1,16 +1,14 @@
 #!/usr/bin/env node
-
 const fs = require('fs');
 const path = require('path');
 const yamlFront = require('yaml-front-matter');
 const gh = require('parse-github-url');
 const axios = require('axios');
-const im = require('imagemagick');
 
 const themesFolder = './content/theme';
-
 const themeFiles = fs.readdirSync(themesFolder);
-const themeData = [];
+
+const githubData = {};
 
 const token = process.env.GITHUB_TOKEN;
 
@@ -21,12 +19,7 @@ loadTheme = async file => {
 
   if (frontmatter.github) {
     let github = gh(frontmatter.github);
-    let themeGithubData = {
-      name: github.name,
-      owner: github.owner,
-      repo: github.repo,
-      demo: frontmatter.demo
-    };
+    let themeKey = github.repo.replace("/", "-").toLowerCase();
 
     repoResponse = await axios.get(
       `https://api.github.com/repos/${github.repo}`,
@@ -37,32 +30,24 @@ loadTheme = async file => {
       }
     );
 
-    themeGithubData.stars = repoResponse.data.stargazers_count;
-    themeData.push(themeGithubData);
+    githubData[themeKey] = {
+      theme_key: themeKey,
+      name: repoResponse.data.name,
+      repo: repoResponse.data.full_name,
+      url: repoResponse.data.html_url,
+      stars: repoResponse.data.stargazers_count,
+      forks: repoResponse.data.forks_count,
+      open_issues: repoResponse.data.open_issues_count
+    }
+
   }
 };
 
 Promise.all(themeFiles.map(file => loadTheme(file)))
   .then(res => {
-    fs.writeFileSync('./data/stars.json', JSON.stringify(themeData));
+    fs.writeFileSync('./data/themes.json', JSON.stringify(githubData, null, 2));
   })
   .catch(error => {
-    console.log(error.message, error.config.url);
+    console.log(error.message);
   });
 
-
-const imageFiles = fs.readdirSync('./static/hires');
-
-imageFiles.forEach((image) => {
-  im.crop({
-    srcPath: `./static/hires/${image}`,
-    dstPath: `./static/images/theme/thumbnail/${image}`,
-    width: 280,
-    height: 180,
-    quality: 1,
-    gravity: "North"
-  }, function(err, stdout, stderr){
-    if (err) throw err;
-    console.log(`resized ${image} to 280x180`);
-  });
-});

@@ -15,7 +15,9 @@
 
   <div class="grids">
     {{ range .Pages }}
-    {{ partial "theme-card.html" (dict "theme" . ) }}
+    {{ $repoName := (substr (replace .Params.github "/" "-") 19 | urlize) }}
+    {{ $repo := index .Site.Data.themes $repoName }}
+    {{ partial "theme-card.html" (dict "theme" . "repo" $repo ) }}
     {{ end }}
   </div>
 </div>

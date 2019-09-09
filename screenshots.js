@@ -3,11 +3,11 @@
 const fs = require('fs');
 const im = require('imagemagick');
 
-const imageFiles = fs.readdirSync('./static/hires');
+const imageFiles = fs.readdirSync('./static/capture');
 
 imageFiles.forEach((image) => {
   im.crop({
-    srcPath: `./static/hires/${image}`,
+    srcPath: `./static/capture/${image}`,
     dstPath: `./static/images/theme/thumbnail/${image}`,
     width: 280,
     height: 180,

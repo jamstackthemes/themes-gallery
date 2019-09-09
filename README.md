@@ -69,7 +69,10 @@ npm install
 
 Generate Github Stars
 
+Requires a Github Token 
+
 ```
+export GITHUB_TOKEN=XXX
 npm run stars
 ```
 
