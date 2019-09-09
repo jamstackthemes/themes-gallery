@@ -1,0 +1,19 @@
+.sort {
+  button {
+    padding: 10px;
+    background: none;
+    border: 2px solid $grey;
+    border-radius: 3px;
+    color: #000;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      border-color: $primary;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  margin-bottom: 20px;
+}

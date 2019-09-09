@@ -11,7 +11,6 @@ To submit your theme to the gallery, fork this repo and make the following chang
 ```yaml
 ---
 title: "My Theme Name"
-thumbnail: 'images/theme/my-theme.png'
 github: https://github.com/username/repo
 demo: https://www.demo.com
 author: Unknown Author
@@ -22,18 +21,6 @@ cms:
 ---
 ```
 
-2. Add screenshots of your theme
-
-Add a hires screenshot of your theme in `static/hires`. 
-
-* Up to 2880px wide by any height
-* .png extension
-* filesize should be under 2MB
-
-Add a thumbnail screenshot of your theme in `static/images/thumbnail` 
-
-* 280px wide by 160px height
-* Update the frontmatter to use this image.
 
 ## Contribution Guidelines
 
