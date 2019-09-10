@@ -1,8 +1,8 @@
 ---
-title: "Hello Friend Ng"
-github: https://github.com/rhazdon/hugo-theme-hello-friend-ng
-demo: https://themes.gohugo.io/theme/hugo-theme-hello-friend-ng/
-author: Djordje Atlialp
+title: "Hello Friend"
+github: https://github.com/panr/hugo-theme-hello-friend
+demo: https://hugo-hello-friend.now.sh/
+author: Radek Kozieł
 ssg:
   - Hugo
 ---
