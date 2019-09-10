@@ -1,3 +1,4 @@
+
 <div
   class="grid {{ range .theme.Params.ssg }}{{ . | urlize }} {{end}}{{ range .theme.Params.cms }}{{ . | urlize }} {{end}}{{ range .theme.Params.deploy }}{{ . | urlize }} {{end}}">
   <div class="theme">
@@ -22,13 +23,15 @@
       <div class="theme-heading">
         <h2 class="theme-title">{{ .theme.Params.title }}</h2>
         <div class="theme-author">By {{ .theme.Params.author }}</div>
-        {{ if .repo }}
-          {{ partial "star.html" (dict "stars" .repo.stars)}}
-        {{ end }}
-        <span class="theme-lastmod-date">{{ .theme.Lastmod.Format "Jan 2, 2006" }}</span>
-        {{ if .repo }}
-          <span class="theme-lastcommit-date">{{ dateFormat "Jan 2 2006" .repo.last_commit }}</span>
-        {{ end }}
+        <div class="theme-fresh">
+          {{ if .repo }}
+            {{ partial "star.html" (dict "stars" .repo.stars)}}
+          {{ end }}
+          {{ if .repo }}
+            {{ partial "last-commit.html" (dict "last_commit" .repo.last_commit)}} 
+          {{ end }}
+        </div>
+        <div class="theme-submitted">Submitted: <span class="theme-lastmod-date">{{ .theme.Lastmod.Format "Jan 2, 2006" }}</span></div>
       </div>
       <div class="theme-tags">
         <div class="tags">

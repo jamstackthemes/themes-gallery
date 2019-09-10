@@ -9,7 +9,8 @@ var $container = $('.grids').isotope({
   },
   sortAscending: {
     name: true,
-    stars: false
+    stars: false,
+    lastmod: false
   }
 });
 
@@ -27,6 +28,8 @@ $('.sort').on( 'click', 'button', function() {
   var sortValue = $(this).attr('data-sort-value');
   console.log(sortValue)
   $container.isotope({ sortBy: sortValue });
+  $('.sort button').removeClass('selected');
+  $(this).addClass('selected');
 });
 
 
@@ -88,3 +91,5 @@ function updateFilterCount() {
 }
 
 
+timeago().render(document.querySelectorAll('.relativetime'));
+timeago.cancel();

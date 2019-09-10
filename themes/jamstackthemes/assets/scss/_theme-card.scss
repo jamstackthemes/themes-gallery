@@ -1,15 +1,4 @@
-.grids {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  .grid {
-    width: 100%;
-    @media (min-width: 600px) {
-      width: 302px;
-    }
-    padding: 10px;
-  }
-}
+
 .theme {
   height: 100%;
   display: flex;
@@ -55,10 +44,11 @@
         font-weight: 400;
         font-size: 14px;
         color: #666666;
+        margin-bottom: 5px;
       }
     }
     .theme-lastmod-date {
-      display: none;
+      // display: none;
     }
     .theme-tags {
       border-top: 1px solid $grey;
@@ -70,38 +60,45 @@
         border-right: 1px solid $grey;
       }
     }
-  
+    .theme-fresh {
+      display: flex;
+      align-items: center;
+      > div {
+        &:first-of-type {
+          border-right: 1px solid $grey;
+        }
+      }
+    }
+    .theme-submitted {
+      display: none;
+      font-size: 13px;
+      line-height: 18px;
+      color: #666666;
+    }
   }
 }
-.star {
-  float: right;
-  border: 1px solid $grey;
-  padding: 2px 5px;
+
+
+.last-committed {
+  display: inline-block;
+  background: #f5f5f5;
+  padding: 4px 6px;
   border-radius: 2px;
   font-size: 14px;
-  line-height: 14px;
+  color: rgb(94, 94, 94);
+}
+
+.star {
+  background: #f5f5f5;
+  padding: 4px 6px;
+  border-radius: 2px;
+  font-size: 14px;
+  color: rgb(94, 94, 94);
   svg {
     fill: $yellow;
     vertical-align: middle;
   }
   .star-count {
-    vertical-align: middle;
   }
 }
 
-.icon {
-  vertical-align: middle;
-  display: inline-block;
-  a {
-    display: inline-block;
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-  img {
-    display: inline-block;
-    vertical-align: bottom;
-    width: 20px;
-    height: 20px;
-  }
-}

@@ -7,14 +7,24 @@ $font-family-base: 'Roboto', Helvetica, sans-serif;
 $font-family-heading: 'Roboto', Helvetica, sans-serif;
 $font-family-mono: 'monospace';
 
+$breakpoints: (
+  'small':  415px,
+  'medium': 992px,
+  'large':  1200px
+);
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+@import 'breakpoints';
 @import 'reset';
+@import 'grid';
 @import 'theme-card';
 @import 'layout';
 @import 'header';
 @import 'filter';
 @import 'sort';
 @import 'intro';
+@import 'icon';
 @import 'not-found';
 
 *,
